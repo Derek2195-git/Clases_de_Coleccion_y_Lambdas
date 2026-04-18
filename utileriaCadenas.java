@@ -15,7 +15,7 @@ public class utileriaCadenas {
     public static ArrayList<String> conversorMayusculas(ArrayList<String> palabras) {
         ArrayList<String> mayusculas;
         mayusculas = palabras.stream()
-                .map(n -> n == null ? null : n.toUpperCase())
+                .map(n -> n == null ? "NULL" : n.toUpperCase())
                 .collect(Collectors.toCollection(ArrayList::new));
 
         return mayusculas;
@@ -56,14 +56,13 @@ public class utileriaCadenas {
     }
 
     public static HashSet<String> deduplicadorPalabras(String frase, int longitud) {
+        if (frase == null || frase.isEmpty()) return new HashSet<>();
         String[] palabras = frase.split("\\W+");
         HashSet<String> palabrasDeduplicadas = (HashSet<String>) Arrays.stream(palabras)
-                .filter(palabra -> palabra.length() < longitud)
+                .filter(palabra -> palabra != null && palabra.length() < longitud)
                 .map(String::toLowerCase)
                 .collect(Collectors.toSet());
 
         return palabrasDeduplicadas;
-
-
     }
 }

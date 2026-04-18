@@ -11,8 +11,9 @@ public class utileriaNumeros {
     public static HashSet<Integer> cuadradosUnicos(ArrayList<Integer> numeros) {
         HashSet<Integer> listaParesCuadrados;
         listaParesCuadrados = (HashSet<Integer>) numeros.stream()
-                .filter(n -> n % 2 == 0)
+                .filter(n -> n != null && n % 2 == 0)
                 .map(n -> n * n)
+
                 .collect(Collectors.toSet());
 
         return listaParesCuadrados;

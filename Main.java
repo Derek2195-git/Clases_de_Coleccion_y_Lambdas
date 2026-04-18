@@ -8,6 +8,7 @@ public class Main {
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         ArrayList<String> frutas = new ArrayList<String>();
         HashMap<String, Double> productos = new HashMap<>();
+        ArrayList listaVacia = new ArrayList();
         HashMap<String, Integer> frecuenciasPalabras = new HashMap<>();
         Random rnd = new Random();
         for (int i = 0; i < 15; i++) {
@@ -17,6 +18,8 @@ public class Main {
             if (rnd.nextBoolean()) numeroAleatorio *= -1;
             numeros.add(numeroAleatorio);
         }
+
+        listaVacia.add(null);
 
         // Para lo que ocupe un ArrayList de Strings
         frutas.add("Fresas");
@@ -41,6 +44,7 @@ public class Main {
 
         // Para el ejercicio que ocupa un String
         String frase = "The quick, brown fox jumps over the lazy dog.";
+        String fraseVacia = null;
 
         // Iniciamos los ejercicios
         // Ejercicio 1
